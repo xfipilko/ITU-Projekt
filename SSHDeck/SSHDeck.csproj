@@ -10,6 +10,7 @@
     <ItemGroup>
         <Folder Include="Models\"/>
         <AvaloniaResource Include="Assets\**"/>
+        <Folder Include="Styles\" />
         <Folder Include="Views\Modules\FileExplorer\Components\" />
         <Folder Include="Views\Modules\ProcessManager\Components\" />
         <Folder Include="Views\Modules\ServiceManager\Components\" />

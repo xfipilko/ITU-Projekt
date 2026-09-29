@@ -1,3 +1,5 @@
+// Authors: Team
+
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data.Core;

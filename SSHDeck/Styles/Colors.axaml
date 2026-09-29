@@ -1,0 +1,57 @@
+<!-- Authors: Team -->
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.ThemeDictionaries>
+
+        <!-- LIGHT THEME -->
+        <ResourceDictionary x:Key="Light">
+            <!-- Backgrounds -->
+            <SolidColorBrush x:Key="AppBackgroundBrush" Color="#F8FAFC" />
+            <SolidColorBrush x:Key="SidebarBackgroundBrush" Color="#F1F5F9" />
+            <SolidColorBrush x:Key="CardBackgroundBrush" Color="#FFFFFF" />
+            <SolidColorBrush x:Key="CardHoverBrush" Color="#F1F5F9" />
+            <SolidColorBrush x:Key="BorderBrush" Color="#E2E8F0" />
+
+            <!-- Accent & Interactive -->
+            <SolidColorBrush x:Key="AccentBrush" Color="#0284C7" />
+            <SolidColorBrush x:Key="AccentHoverBrush" Color="#0369A1" />
+
+            <!-- Typography -->
+            <SolidColorBrush x:Key="TextPrimaryBrush" Color="#0F172A" />
+            <SolidColorBrush x:Key="TextSecondaryBrush" Color="#64748B" />
+
+            <!-- Status Colors (Metrics, Services, Alerts) -->
+            <SolidColorBrush x:Key="SuccessBrush" Color="#059669" />
+            <SolidColorBrush x:Key="WarningBrush" Color="#D97706" />
+            <SolidColorBrush x:Key="DangerBrush" Color="#E11D48" />
+            <SolidColorBrush x:Key="InfoBrush" Color="#4F46E5" />
+        </ResourceDictionary>
+
+        <!-- DARK THEME (Modern Cyber Slate) -->
+        <ResourceDictionary x:Key="Dark">
+            <!-- Backgrounds -->
+            <SolidColorBrush x:Key="AppBackgroundBrush" Color="#0F172A" />
+            <SolidColorBrush x:Key="SidebarBackgroundBrush" Color="#0B1120" />
+            <SolidColorBrush x:Key="CardBackgroundBrush" Color="#1E293B" />
+            <SolidColorBrush x:Key="CardHoverBrush" Color="#273549" />
+            <SolidColorBrush x:Key="BorderBrush" Color="#334155" />
+
+            <!-- Accent & Interactive -->
+            <SolidColorBrush x:Key="AccentBrush" Color="#38BDF8" />
+            <SolidColorBrush x:Key="AccentHoverBrush" Color="#0EA5E9" />
+
+            <!-- Typography -->
+            <SolidColorBrush x:Key="TextPrimaryBrush" Color="#F8FAFC" />
+            <SolidColorBrush x:Key="TextSecondaryBrush" Color="#94A3B8" />
+
+            <!-- Status Colors (Metrics, Services, Alerts) -->
+            <SolidColorBrush x:Key="SuccessBrush" Color="#10B981" />
+            <SolidColorBrush x:Key="WarningBrush" Color="#F59E0B" />
+            <SolidColorBrush x:Key="DangerBrush" Color="#F43F5E" />
+            <SolidColorBrush x:Key="InfoBrush" Color="#6366F1" />
+        </ResourceDictionary>
+
+    </ResourceDictionary.ThemeDictionaries>
+
+</ResourceDictionary>
