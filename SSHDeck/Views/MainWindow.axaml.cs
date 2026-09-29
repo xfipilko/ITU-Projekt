@@ -1,3 +1,5 @@
+// Authors: Team
+
 using Avalonia.Controls;
 
 namespace SSHDeck.Views;

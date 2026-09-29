@@ -1,6 +1,11 @@
+// Authors: Team
+
 namespace SSHDeck.ViewModels;
+
+using CommunityToolkit.Mvvm.ComponentModel;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
-    public string Greeting { get; } = "Welcome to Avalonia!";
+    [ObservableProperty] 
+    private ViewModelBase? _currentPage;
 }
