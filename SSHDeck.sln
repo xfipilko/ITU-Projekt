@@ -1,0 +1,16 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSHDeck", "SSHDeck\SSHDeck.csproj", "{5D211392-06A4-4B69-89E6-5D9F5B8104B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D211392-06A4-4B69-89E6-5D9F5B8104B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D211392-06A4-4B69-89E6-5D9F5B8104B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D211392-06A4-4B69-89E6-5D9F5B8104B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D211392-06A4-4B69-89E6-5D9F5B8104B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
