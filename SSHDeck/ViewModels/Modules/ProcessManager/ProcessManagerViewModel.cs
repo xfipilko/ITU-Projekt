@@ -2,6 +2,7 @@
 // Module: Process Manager
 
 using SSHDeck.ViewModels.Modules.ProcessManager.Tabs;
+using SSHDeck.ViewModels.Modules.ProcessManager.Tabs.Performence;
 
 namespace SSHDeck.ViewModels.Modules.ProcessManager;
 
