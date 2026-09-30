@@ -1,9 +1,66 @@
 <!-- Authors: Team -->
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="SSHDeck.Views.Navigation.SidebarView">
-    Welcome to Avalonia!
+             xmlns:vm="using:SSHDeck.ViewModels.Navigation"
+             x:Class="SSHDeck.Views.Navigation.SidebarView"
+             x:DataType="vm:SidebarViewModel">
+
+    <Border Background="{DynamicResource SidebarBackgroundBrush}"
+            BorderBrush="{DynamicResource BorderBrush}"
+            BorderThickness="0,0,1,0"
+            Padding="16">
+        
+        <DockPanel LastChildFill="False">
+            <!-- App header -->
+            <StackPanel DockPanel.Dock="Top" Spacing="4" Margin="0,0,0,24">
+                <TextBlock Text="SSHDeck" 
+                           FontSize="20" 
+                           FontWeight="Bold" 
+                           Foreground="{DynamicResource TextPrimaryBrush}" />
+                <TextBlock Text="Server Management" 
+                           FontSize="12" 
+                           Foreground="{DynamicResource TextSecondaryBrush}" />
+            </StackPanel>
+
+            <!-- Navigation buttons -->
+            <StackPanel DockPanel.Dock="Top" Spacing="8">
+                <Button HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Left"
+                        Padding="12,10"
+                        CornerRadius="6"
+                        Command="{Binding NavigateToProcessesCommand}">
+                    <TextBlock Text="Process Manager" 
+                               Foreground="{DynamicResource TextPrimaryBrush}" />
+                </Button>
+
+                <Button HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Left"
+                        Padding="12,10"
+                        CornerRadius="6"
+                        Command="{Binding NavigateToServicesCommand}">
+                    <TextBlock Text="Service Manager" 
+                               Foreground="{DynamicResource TextPrimaryBrush}" />
+                </Button>
+
+                <Button HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Left"
+                        Padding="12,10"
+                        CornerRadius="6"
+                        Command="{Binding NavigateToFilesCommand}">
+                    <TextBlock Text="File Explorer" 
+                               Foreground="{DynamicResource TextPrimaryBrush}" />
+                </Button>
+            </StackPanel>
+
+            <!-- Connection status -->
+            <Border DockPanel.Dock="Bottom" 
+                    Background="{DynamicResource CardBackgroundBrush}"
+                    CornerRadius="6"
+                    Padding="10">
+                <TextBlock Text="Connected: 192.168.1.10" 
+                           FontSize="11"
+                           Foreground="{DynamicResource SuccessBrush}" />
+            </Border>
+        </DockPanel>
+    </Border>
 </UserControl>

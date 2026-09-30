@@ -11,17 +11,12 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="SSHDeck">
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
-
     <Grid ColumnDefinitions="240, *">
-        <nav:SidebarView Grid.Column="0" />
+        <nav:SidebarView Grid.Column="0" 
+                         DataContext="{Binding Sidebar}" />
         
         <ContentControl Grid.Column="1"
-                        Content="{Binding CurrentPage}"/>
+                        Content="{Binding CurrentPage}" />
     </Grid>
 
 </Window>
