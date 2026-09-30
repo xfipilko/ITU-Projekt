@@ -5,7 +5,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace SSHDeck.Views.Modules.ProcessManager.Tabs.Performence.Components;
+namespace SSHDeck.Views.Modules.ProcessManager.Tabs.Processes.Components;
 
 public partial class ProcessesSummaryView : UserControl
 {

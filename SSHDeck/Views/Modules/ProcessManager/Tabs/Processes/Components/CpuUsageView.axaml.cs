@@ -5,11 +5,11 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace SSHDeck.Views.Modules.ProcessManager.Tabs.Performence.Components;
+namespace SSHDeck.Views.Modules.ProcessManager.Tabs.Processes.Components;
 
-public partial class RamUsageView : UserControl
+public partial class CpuUsageView : UserControl
 {
-    public RamUsageView()
+    public CpuUsageView()
     {
         InitializeComponent();
     }
