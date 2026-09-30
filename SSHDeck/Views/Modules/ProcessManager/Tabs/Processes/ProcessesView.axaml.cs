@@ -2,7 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace SSHDeck.Views.Modules.ProcessManager.Tabs;
+namespace SSHDeck.Views.Modules.ProcessManager.Tabs.Processes;
 
 public partial class ProcessesView : UserControl
 {

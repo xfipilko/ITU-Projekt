@@ -1,8 +1,8 @@
 // Author: Filip Bambura, 282232 (xfipilko)
 // Module: Process Manager
 
-using SSHDeck.ViewModels.Modules.ProcessManager.Tabs;
 using SSHDeck.ViewModels.Modules.ProcessManager.Tabs.Performence;
+using SSHDeck.ViewModels.Modules.ProcessManager.Tabs.Processes;
 
 namespace SSHDeck.ViewModels.Modules.ProcessManager;
 
