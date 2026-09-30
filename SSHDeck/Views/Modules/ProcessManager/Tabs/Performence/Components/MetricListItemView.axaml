@@ -6,7 +6,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="SSHDeck.Views.Modules.ProcessManager.Tabs.Performence.Components.MetricListItemView">
-    Welcome to Avalonia!
+             xmlns:vm="using:SSHDeck.ViewModels.Modules.ProcessManager.Tabs.Performence.Components"
+             xmlns:local="using:SSHDeck.Views.Modules.ProcessManager.Tabs.Performence.Components"
+             mc:Ignorable="d" d:DesignWidth="260" d:DesignHeight="70"
+             x:Class="SSHDeck.Views.Modules.ProcessManager.Tabs.Performence.Components.MetricListItemView"
+             x:DataType="vm:MetricListItemViewModel">
+
+    <Grid ColumnDefinitions="Auto,*" Margin="8">
+
+        <local:ChartView Grid.Column="0"
+                         Width="60" Height="40"
+                         Margin="0,0,12,0" />
+
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <TextBlock Text="{Binding Heading}"
+                       Foreground="{DynamicResource TextPrimaryBrush}"
+                       FontWeight="Bold" />
+            <TextBlock Text="{Binding Description}"
+                       Foreground="{DynamicResource TextSecondaryBrush}" />
+        </StackPanel>
+
+    </Grid>
+
 </UserControl>
