@@ -35,8 +35,6 @@ public class PerformenceViewModel : ViewModelBase
     {
         var data = await _processService.GetSystemPerformanceAsync();
         
-        // Example logic for UI update
-        MetricDetail.Heading = "CPU";
-        MetricDetail.Description = $"Utilization: {data.CpuUtilization:F1}% | Processes: {data.TotalProcesses} | Threads: {data.TotalThreads}";
+        MetricList.UpdateMetrics(data);
     }
 }
