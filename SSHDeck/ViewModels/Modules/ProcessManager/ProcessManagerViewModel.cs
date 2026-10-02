@@ -15,11 +15,14 @@ public partial class ProcessManagerViewModel : ViewModelBase
     private ViewModelBase? _currentTab;
 
     // Tab view model instances
-    public ProcessesViewModel ProcessesTab { get; } = new();
-    public PerformenceViewModel PerformenceTab { get; } = new();
+    public ProcessesViewModel ProcessesTab { get; }
+    public PerformenceViewModel PerformenceTab { get; }
 
-    public ProcessManagerViewModel()
+    public ProcessManagerViewModel(SSHDeck.Services.Interfaces.IProcessManagerService processService)
     {
+        ProcessesTab = new ProcessesViewModel(processService);
+        PerformenceTab = new PerformenceViewModel(processService);
+
         // Default active tab
         CurrentTab = ProcessesTab;
     }

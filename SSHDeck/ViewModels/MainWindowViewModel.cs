@@ -13,14 +13,19 @@ public partial class MainWindowViewModel : ViewModelBase
     private ViewModelBase? _currentPage;
 
     // Keep instances in memory
-    public ProcessManagerViewModel ProcessManager { get; } = new();
+    public ProcessManagerViewModel ProcessManager { get; }
     public ServiceManagerViewModel ServiceManager { get; } = new();
     public FileExplorerViewModel FileExplorer { get; } = new();
                                                     
     public SidebarViewModel Sidebar { get; }
 
+    private readonly SSHDeck.Services.Interfaces.IProcessManagerService _processService;
+
     public MainWindowViewModel()
     {
+        _processService = new SSHDeck.Services.Mock.MockProcessManagerService();
+        ProcessManager = new ProcessManagerViewModel(_processService);
+
         // Set default view
         CurrentPage = ProcessManager;
 
