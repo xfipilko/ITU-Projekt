@@ -1,6 +1,8 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSHDeck", "SSHDeck\SSHDeck.csproj", "{5D211392-06A4-4B69-89E6-5D9F5B8104B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{097C6A49-0D9C-4BC5-B9DC-C09E05E53C4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

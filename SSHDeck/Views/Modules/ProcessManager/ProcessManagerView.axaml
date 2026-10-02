@@ -4,9 +4,29 @@
 -->
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:SSHDeck.ViewModels.Modules.ProcessManager"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="SSHDeck.Views.Modules.ProcessManager.ProcessManagerView">
-    Welcome to Avalonia!
+             x:Class="SSHDeck.Views.Modules.ProcessManager.ProcessManagerView"
+             x:DataType="vm:ProcessManagerViewModel">
+
+    <Grid RowDefinitions="Auto, *">
+        <!-- Tab navigation -->
+        <StackPanel Grid.Row="0" 
+                    Orientation="Horizontal" 
+                    Spacing="8" 
+                    Margin="0,0,0,16"
+                    Background="Red">
+            <Button Content="Processes" 
+                    Command="{Binding NavigateToProcessesCommand}" />
+            <Button Content="Performance" 
+                    Command="{Binding NavigateToPerformanceCommand}" />
+        </StackPanel>
+
+        <!-- Current tab view -->
+        <ContentControl Grid.Row="1" 
+                        Content="{Binding CurrentTab}" />
+    </Grid>
+
 </UserControl>

@@ -1,0 +1,20 @@
+﻿<!--
+    Author: Filip Bambura, 282232 (xfipilko)
+    Module: Process Manager
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:SSHDeck.ViewModels.Modules.ProcessManager.Tabs.Performence"
+             xmlns:components="using:SSHDeck.Views.Modules.ProcessManager.Tabs.Performence.Components"
+             mc:Ignorable="d"
+             x:Class="SSHDeck.Views.Modules.ProcessManager.Tabs.Performence.PerformenceView"
+             x:DataType="vm:PerformenceViewModel">
+
+    <Grid ColumnDefinitions="Auto, *">
+        <components:MetricListView Grid.Column="0" DataContext="{Binding MetricList}" />
+        <components:MetricDetailView Grid.Column="1" DataContext="{Binding MetricDetail}"/>
+    </Grid>
+
+</UserControl>
