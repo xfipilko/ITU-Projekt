@@ -12,6 +12,12 @@ public partial class MetricDetailViewModel : ViewModelBase
 
     [ObservableProperty]
     private string _description = string.Empty;
+    
+    [ObservableProperty]
+    private string _subHeading = string.Empty;
+    
+    [ObservableProperty]
+    private string _subHeadingValue = string.Empty;
 
     public ChartViewModel Chart { get; } = new();
 }

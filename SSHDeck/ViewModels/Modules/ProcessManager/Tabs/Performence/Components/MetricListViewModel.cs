@@ -13,55 +13,57 @@ public class MetricListViewModel : ViewModelBase
 
     public void UpdateMetrics(SystemPerformanceModel data)
     {
-        // 1. CPU
-        UpdateOrAddItem("CPU", $"{data.CpuUtilization:F1}% ({data.Cores} Cores)");
+        UpdateOrAddItem("CPU", $"{data.CpuUtilization:F1}% ({data.Cores} Cores)", data.CpuUtilization);
 
-        // 2. RAM
         double usedRamGb = data.InUseMemory / (1024.0 * 1024 * 1024);
         double totalRamGb = data.TotalMemory / (1024.0 * 1024 * 1024);
         double ramPercentage = totalRamGb > 0 ? (usedRamGb / totalRamGb) * 100 : 0;
-        UpdateOrAddItem("Memory", $"{usedRamGb:F1}/{totalRamGb:F1} GB ({ramPercentage:F0}%)");
+        UpdateOrAddItem("Memory", $"{usedRamGb:F1}/{totalRamGb:F1} GB ({ramPercentage:F0}%)", ramPercentage);
 
-        // 3. Swap
         if (data.SwapTotal > 0)
         {
             double usedSwapMb = data.SwapUsed / (1024.0 * 1024);
             double totalSwapMb = data.SwapTotal / (1024.0 * 1024);
             double swapPercentage = (usedSwapMb / totalSwapMb) * 100;
-            UpdateOrAddItem("Swap", $"{usedSwapMb:F0}/{totalSwapMb:F0} MB ({swapPercentage:F0}%)");
+            UpdateOrAddItem("Swap", $"{usedSwapMb:F0}/{totalSwapMb:F0} MB ({swapPercentage:F0}%)", swapPercentage);
         }
 
-        // 4. Dynamic Disks from backend
         foreach (var disk in data.Disks)
         {
             double usedDiskGb = (disk.TotalSpaceBytes - disk.FreeSpaceBytes) / (1024.0 * 1024 * 1024);
             double totalDiskGb = disk.TotalSpaceBytes / (1024.0 * 1024 * 1024);
+            double activityMb = (disk.ReadBytesPerSec + disk.WriteBytesPerSec) / (1024.0 * 1024);
+            
             string heading = $"Disk ({disk.MountPoint})";
             string desc = $"{usedDiskGb:F1}/{totalDiskGb:F1} GB ({disk.FileSystemType})";
-            UpdateOrAddItem(heading, desc);
+            
+            UpdateOrAddItem(heading, desc, activityMb);
         }
 
-        // 5. Dynamic Network interfaces from backend
         foreach (var net in data.Networks)
         {
             double sendKb = net.SendBytesPerSec / 1024.0;
             double recvKb = net.ReceiveBytesPerSec / 1024.0;
+            
             string heading = $"Network ({net.InterfaceName})";
             string desc = $"Up: {sendKb:F1} KB/s | Down: {recvKb:F1} KB/s";
-            UpdateOrAddItem(heading, desc);
+            
+            UpdateOrAddItem(heading, desc, sendKb + recvKb);
         }
     }
 
-    private void UpdateOrAddItem(string heading, string description)
+    private void UpdateOrAddItem(string heading, string description, double chartValue)
     {
         var existing = Items.FirstOrDefault(i => i.Heading == heading);
         if (existing != null)
         {
-            existing.Description = description;
+            existing.UpdateData(description, chartValue);
         }
         else
         {
-            Items.Add(new MetricListItemViewModel(heading, description));
+            var newItem = new MetricListItemViewModel(heading, description);
+            newItem.UpdateData(description, chartValue);
+            Items.Add(newItem);
         }
     }
 }
