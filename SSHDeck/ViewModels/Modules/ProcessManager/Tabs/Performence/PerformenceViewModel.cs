@@ -23,7 +23,7 @@ public class PerformenceViewModel : ViewModelBase
         
         _timer = new DispatcherTimer
         {
-            Interval = TimeSpan.FromSeconds(2)
+            Interval = TimeSpan.FromSeconds(1)
         };
         _timer.Tick += async (sender, args) => await LoadDataAsync();
         _timer.Start();
