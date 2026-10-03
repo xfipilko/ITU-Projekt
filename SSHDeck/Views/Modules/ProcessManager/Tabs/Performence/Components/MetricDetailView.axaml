@@ -16,7 +16,9 @@
         
         <StackPanel
             Orientation="Vertical">
-            
+
+            <TextBlock Text="{Binding Heading}" />
+
             <local:ChartView Grid.Column="0"
                              DataContext="{Binding Chart}"
                              Width="60" Height="40"
