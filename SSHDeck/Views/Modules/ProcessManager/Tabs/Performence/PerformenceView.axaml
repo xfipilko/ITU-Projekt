@@ -14,7 +14,7 @@
 
     <Grid ColumnDefinitions="Auto, *">
         <components:MetricListView Grid.Column="0" DataContext="{Binding MetricList}" />
-        <components:MetricDetailView Grid.Column="1" DataContext="{Binding MetricDetail}"/>
+        <ContentControl Grid.Column="1" Content="{Binding MetricDetail}" />
     </Grid>
 
 </UserControl>

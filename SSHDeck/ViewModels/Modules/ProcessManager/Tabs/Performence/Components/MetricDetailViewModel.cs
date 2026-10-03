@@ -26,4 +26,10 @@ public partial class MetricDetailViewModel : ViewModelBase
         _heading = heading;
         _description = description;
     }
+
+    public void Update(string description, double chartValue)
+    {
+        Description = description;
+        Chart.AppendValue(chartValue);
+    }
 }

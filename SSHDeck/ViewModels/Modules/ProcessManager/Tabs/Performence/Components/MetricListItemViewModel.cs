@@ -30,7 +30,6 @@ public partial class MetricListItemViewModel : ViewModelBase
     {
         Description = description;
         Chart.AppendValue(chartValue);
-        
-        // Note: You will later update Detail data here as well when implemented
+        Detail.Update(description, chartValue);
     }
 }
