@@ -8,7 +8,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="using:SSHDeck.Views.Modules.ProcessManager.Tabs.Performence.Components"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="SSHDeck.Views.Modules.ProcessManager.Tabs.Performence.Components.MetricDetailView">
+             x:Class="SSHDeck.Views.Modules.ProcessManager.Tabs.Performence.Components.MetricDetailView"
+             xmlns:vm="using:SSHDeck.ViewModels.Modules.ProcessManager.Tabs.Performence.Components"
+             x:DataType="vm:MetricDetailViewModel">
     
     <Grid RowDefinitions="*, Auto" Background="DarkGoldenrod">
         

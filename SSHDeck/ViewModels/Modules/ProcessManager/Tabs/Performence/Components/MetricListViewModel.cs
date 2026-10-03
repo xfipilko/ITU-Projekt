@@ -4,13 +4,17 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using SSHDeck.Models;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace SSHDeck.ViewModels.Modules.ProcessManager.Tabs.Performence.Components;
 
-public class MetricListViewModel : ViewModelBase
+public partial class MetricListViewModel : ViewModelBase
 {
     public ObservableCollection<MetricListItemViewModel> Items { get; } = new();
 
+    [ObservableProperty]
+    private MetricListItemViewModel? _selectedItem;
+    
     public void UpdateMetrics(SystemPerformanceModel data)
     {
         UpdateOrAddItem("CPU", $"{data.CpuUtilization:F1}% ({data.Cores} Cores)", data.CpuUtilization);
@@ -64,6 +68,12 @@ public class MetricListViewModel : ViewModelBase
             var newItem = new MetricListItemViewModel(heading, description);
             newItem.UpdateData(description, chartValue);
             Items.Add(newItem);
+            
+            // Automatically select the first item if nothing is selected yet
+            if (SelectedItem == null)
+            {
+                SelectedItem = newItem;
+            }
         }
     }
 }

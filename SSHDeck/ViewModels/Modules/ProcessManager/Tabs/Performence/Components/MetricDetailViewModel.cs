@@ -21,17 +21,9 @@ public partial class MetricDetailViewModel : ViewModelBase
 
     public ChartViewModel Chart { get; } = new();
     
-    public MetricDetailViewModel(string heading, string description, string subHeading, string subHeadingValue)
+    public MetricDetailViewModel(string heading, string description)
     {
         _heading = heading;
         _description = description;
-        _subHeading = subHeading;
-        _subHeadingValue = subHeadingValue;
-    }
-    
-    public void SetHeaderData(string description, double chartValue)
-    {
-        Description = description;
-        Chart.AppendValue(chartValue);
     }
 }

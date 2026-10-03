@@ -12,7 +12,10 @@
              x:DataType="vm:MetricListViewModel">
 
     <Grid Width="240">
-        <ItemsControl ItemsSource="{Binding Items}" />
+        <ListBox ItemsSource="{Binding Items}" 
+                 SelectedItem="{Binding SelectedItem}"
+                 Background="Transparent"
+                 BorderThickness="0" />
     </Grid>
     
 </UserControl>
